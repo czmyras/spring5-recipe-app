@@ -8,6 +8,8 @@ general:
   branches:
     only:
      - start # list of branches to build
+  artifacts:
+    - "spring5-recipe-app-0.0.1-SNAPSHOT.jar"
 jobs:
   build:
     docker:
