@@ -11,6 +11,10 @@ general:
   branches:
     only:
       - start # list of branches to build
+
+test:
+  post:
+    - mv target/*.jar $CIRCLE_ARTIFACTS
 jobs:
   build:
     docker:
