@@ -7,6 +7,7 @@ version: 2
 general:
   artifacts:
     - "target/*.jar"
+    - "~"
   branches:
     only:
       - start # list of branches to build
