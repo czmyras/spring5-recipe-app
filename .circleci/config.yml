@@ -8,10 +8,8 @@ general:
   branches:
     only:
       - start # list of branches to build
-test:
-  post:
-    - mkdir $CIRCLE_ARTIFACTS/jars
-    - mv ~/repo/target/*.jar $CIRCLE_ARTIFACTS/jars
+  artifacts:
+    - "~/repo/target/spring5-recipe-app-0.0.1-SNAPSHOT.jar"
 jobs:
   build:
     docker:
