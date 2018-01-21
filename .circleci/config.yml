@@ -44,9 +44,6 @@ jobs:
           key: v1-dependencies-{{ checksum "pom.xml" }}
         
       # run tests!
-      - run: |
-          mvn integration-test
-          mkdir /tmp/jars
-          cp target/*.jar /tmp/jars
+      - run: mvn integration-test
       - store_artifacts:
-          path: /tmp/jars
+          path: target
