@@ -6,15 +6,17 @@ version: 2
 
 general:
   artifacts:
-    - "target/*.jar"
-    - "~"
+    - "target"
+    - "~/repo"
   branches:
     only:
       - start # list of branches to build
 
 test:
   post:
-    - mv target/*.jar $CIRCLE_ARTIFACTS
+    - mkdir -p $CIRCLE_ARTIFACTS/jars/
+    - find . -type f -regex ".*/target/.*jar" -exec cp {} $CIRCLE_ARTIFACTS/jars/ \;
+
 jobs:
   build:
     docker:
