@@ -1,10 +1,8 @@
-<!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Recipe Home</title>
+    <title>Recipe Form</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -39,7 +37,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3 form-group">
-                                    <label>Categories</label>
+                                    <label>Categories:</label>
                                 </div>
                                 <div class="col-md-9 form-group">
                                     <div class="radio">
@@ -58,11 +56,11 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3 form-group">
-                                    <label>Prep time:</label>
+                                    <label>Prep Time:</label>
                                     <input type="text" class="form-control" th:field="*{prepTime}"/>
                                 </div>
                                 <div class="col-md-3 form-group">
-                                    <label>Cook time:</label>
+                                    <label>Cooktime:</label>
                                     <input type="text" class="form-control" th:field="*{cookTime}"/>
                                 </div>
                                 <div class="col-md-3 form-group">
@@ -105,7 +103,6 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <!--/*@thymesVar id="ingredient" type="guru.springframework.domain.Ingredient"*/-->
                                     <ul>
                                         <li th:remove="all">Cup of milk</li>
                                         <li th:remove="all">Teaspoon of chocolate</li>
@@ -126,7 +123,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12 form-group">
-                                    <textarea class="form-control" rows="3" th:fiels="*{directions}"></textarea>
+                                    <textarea class="form-control" rows="3" th:field="*{directions}"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -138,11 +135,12 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12 form-group">
-                                    <textarea class="form-control" rows="3" th:fiels="*{notes.recipeNotes}"></textarea>
+                                    <textarea class="form-control" rows="3" th:field="*{notes.recipeNotes}"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>
