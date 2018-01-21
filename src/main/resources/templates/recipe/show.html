@@ -1,4 +1,3 @@
-<!--/*@thymesVar id="notes" type="guru.springframework.domain.Notes"*/-->
 <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
 
 <!DOCTYPE html>
@@ -33,10 +32,10 @@
                                 <h5>Categories</h5>
                             </div>
                             <div class="col-md-9">
-                                <ul th:each="category : ${recipe.categories}">
+                                <ul>
                                     <li th:remove="all">cat one</li>
                                     <li th:remove="all">cat two</li>
-                                    <li th:text="${category.description}">cat three</li>
+                                    <li th:each="category : ${recipe.categories}" th:text="${category.description}">cat three</li>
                                 </ul>
                             </div>
                         </div>
@@ -45,7 +44,7 @@
                                 <h5>Prep time:</h5>
                             </div>
                             <div class="col-md-3">
-                                <h5 th:text="${recipe.prepTime}">30 min</h5>
+                                <h5 th:text="${(recipe.prepTime) + ' min'}">30 min</h5>
                             </div>
                             <div class="col-md-3">
                                 <h5>Difficulty:</h5>
@@ -59,7 +58,7 @@
                                 <h5>Cook time:</h5>
                             </div>
                             <div class="col-md-3">
-                                <h5 th:text="${recipe.cookTime}">30 min</h5>
+                                <h5 th:text="${(recipe.cookTime) + ' min'}">30 min</h5>
                             </div>
                             <div class="col-md-3">
                                 <h5>Servings:</h5>
@@ -92,12 +91,13 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!--/*@thymesVar id="ingredient" type="guru.springframework.domain.Ingredient"*/-->
-                                <ul th:each="ingredient : ${recipe.ingredients}">
+                                <ul>
                                     <li th:remove="all">Cup of milk</li>
                                     <li th:remove="all">Teaspoon of chocolate</li>
-                                    <li th:text="@{${ingredient.amount} + ' ' +
-                                        ${ingredient.uom.description} +  ' ' +
-                                        ${ingredient.description}}">Teaspoon of sugar</li>
+                                    <li th:each="ingredient : ${recipe.ingredients}"
+                                        th:text="${(ingredient.amount +
+                                        ' ' + ingredient.uom.description +
+                                        ' - ' + ingredient.description)}">Teaspoon of sugar</li>
                                 </ul>
                             </div>
                         </div>
