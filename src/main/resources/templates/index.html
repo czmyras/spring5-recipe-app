@@ -41,11 +41,15 @@
                                 <td>123</td>
                                 <td>Tasty Goodnees</td>
                                 <td><a href="#">View</a> </td>
+                                <td><a href="#">Update</a> </td>
+                                <td><a href="#">Delete</a> </td>
                             </tr>
                             <tr th:remove="all">
                                 <td>666</td>
                                 <td>Spaghetti</td>
                                 <td><a href="#">View</a> </td>
+                                <td><a href="#">Update</a> </td>
+                                <td><a href="#">Delete</a> </td>
                             </tr>
                             <tr th:each="recipe : ${recipes}">
                                 <td th:text="${recipe.id}">123</td>
