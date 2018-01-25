@@ -130,6 +130,7 @@ public class IngredientServiceImplTest {
 
         //then
         assertEquals(1, recipe.getIngredients().size());
+        verify(recipeRepository, times(1)).findById(anyLong());
         verify(recipeRepository, times(1)).save(any(Recipe.class));
 
     }
