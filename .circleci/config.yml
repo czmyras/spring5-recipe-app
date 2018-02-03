@@ -50,6 +50,10 @@ jobs:
         #          cp target/*.jar /tmp/jars
         #      - store_artifacts:
         #          path: /tmp/jars
-      - run: mvn integration-test
+      - run: mvn integration-test cobertura:cobertura
       - store_artifacts:
           path: target
+
+      - run:
+          name: Send to CodeCov
+          command: bash <(curl -s https://codecov.io/bash)
