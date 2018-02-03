@@ -1,8 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/sfg_dev
+    url: jdbc:mysql://localhost:3306/sfg_dev?useUnicode=yes&characterEncoding=UTF-8
     username: sfg_dev_user
     password: guru
+    platform: mysql
   jpa:
     hibernate:
       ddl-auto: validate
